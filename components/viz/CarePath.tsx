@@ -10,14 +10,14 @@ const steps: { icon: IconName; label: string; hint: string }[] = [
 
 export function CarePath() {
   return (
-    <ol className="overflow-hidden rounded-2xl border border-brand-border/80 bg-white sm:flex">
+    <ol className="sm:flex">
       {steps.map((step, index) => (
         <li
           key={step.label}
-          className="relative flex flex-1 items-center gap-3 border-b border-brand-border/70 px-4 py-3.5 last:border-b-0 sm:border-b-0 sm:border-s sm:px-5 sm:first:border-s-0"
+          className="relative flex flex-1 items-center gap-3 border-b border-brand-border/70 px-5 py-4 last:border-b-0 sm:border-b-0 sm:border-s sm:px-6 sm:first:border-s-0"
         >
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-brand-bg-alt text-brand-primary">
-            <FeatureIcon name={step.icon} size={18} />
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand-bg-alt text-brand-primary">
+            <FeatureIcon name={step.icon} size={20} />
           </span>
           <span className="min-w-0">
             <span className="block text-[11px] font-bold text-brand-primary/80">
@@ -26,9 +26,7 @@ export function CarePath() {
             <span className="block text-sm font-bold text-brand-fg">
               {step.label}
             </span>
-            <span className="block text-xs text-muted-foreground">
-              {step.hint}
-            </span>
+            <span className="block text-xs text-muted-foreground">{step.hint}</span>
           </span>
         </li>
       ))}

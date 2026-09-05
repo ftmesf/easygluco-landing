@@ -33,7 +33,7 @@ const appSteps = [
 
 export function AppConnect() {
   return (
-    <section id="app" className="section-alt py-16 sm:py-24">
+    <section id="app" className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <Badge

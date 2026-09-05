@@ -1,49 +1,38 @@
-import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 import { FeatureIcon } from "@/components/viz/FeatureIcon";
 import { toneClasses } from "@/components/viz/tone";
 import type { PainPoint } from "@/lib/content/types";
 
-export function PainPointCard({ item }: { item: PainPoint }) {
+export function PainPointCard({
+  item,
+  step,
+}: {
+  item: PainPoint;
+  step: string;
+}) {
   const tone = toneClasses[item.tone];
-  const [situation, consequence] = item.bullets;
 
   return (
-    <article
-      data-reveal
-      className={`card-lift relative flex flex-col overflow-hidden rounded-3xl border border-brand-border/70 bg-white p-7 shadow-sm hover:shadow-lg sm:p-8 ${tone.hover}`}
-    >
+    <article data-reveal className="grid grid-cols-[auto_1fr] gap-x-4 px-5 py-7 sm:gap-x-6 sm:px-8 sm:py-8">
       <span
-        className={`absolute inset-y-0 right-0 w-1.5 ${tone.bullet}`}
+        className={`mt-0.5 font-extrabold leading-none tracking-tight ${tone.footer} text-lg sm:text-xl`}
         aria-hidden
-      />
-
-      <div className="flex items-center gap-3">
-        <span
-          className={`flex size-14 shrink-0 items-center justify-center rounded-2xl ${tone.icon}`}
-        >
-          <FeatureIcon name={item.icon} size={28} />
-        </span>
-        <span
-          className={`rounded-full px-3 py-1 text-sm font-bold ${tone.badge}`}
-        >
-          {item.badge}
-        </span>
-      </div>
-
-      <h3 className="mt-5 text-xl font-extrabold leading-8 text-brand-fg">
-        {item.title}
-      </h3>
-
-      <p className="mt-3 text-lg leading-8 text-brand-fg/80">{situation}</p>
-
-      {consequence ? (
-        <p
-          className={`mt-5 flex items-start gap-2.5 rounded-2xl bg-brand-bg px-4 py-3.5 text-base font-semibold leading-8 sm:text-lg ${tone.footer}`}
-        >
-          <ArrowLeft size={18} weight="bold" className="mt-1.5 shrink-0" />
-          <span>{consequence}</span>
+      >
+        {step}
+      </span>
+      <div className="min-w-0">
+        <p className="flex items-center gap-2 text-[11px] font-bold text-muted-foreground">
+          <span className={`flex size-7 items-center justify-center rounded-lg ${tone.icon}`}>
+            <FeatureIcon name={item.icon} size={14} />
+          </span>
+          {item.kicker}
         </p>
-      ) : null}
+        <h3 className="mt-2 text-base font-extrabold leading-7 text-brand-fg sm:text-lg">
+          {item.title}
+        </h3>
+        <p className="mt-2 text-sm leading-7 text-muted-foreground sm:text-[0.95rem] sm:leading-8">
+          {item.body}
+        </p>
+      </div>
     </article>
   );
 }

@@ -31,21 +31,23 @@ export interface SpecRow {
 export interface FeatureGroup {
   icon: IconName;
   tone: Tone;
+  figure: string;
   title: string;
   description: string;
 }
 
 export interface PainPoint {
   icon: IconName;
-  badge: string;
   tone: Tone;
+  kicker: string;
   title: string;
-  bullets: [string, string];
+  body: string;
 }
 
 export interface ClarifyPoint {
   icon: IconName;
   tone: Tone;
+  figure: string;
   title: string;
   description: string;
 }

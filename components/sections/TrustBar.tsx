@@ -1,55 +1,30 @@
-import { FeatureIcon } from "@/components/viz/FeatureIcon";
-import type { IconName } from "@/lib/content/types";
-
-const metrics: {
-  icon: IconName;
-  value: string;
-  label: string;
-}[] = [
-  {
-    icon: "Package",
-    value: "نوار پایدار",
-    label: "همیشه در بازار ایران",
-  },
-  {
-    icon: "Flask",
-    value: "تأیید مرجع",
-    label: "آزمایشگاه و مراکز پزشکی",
-  },
-  {
-    icon: "Timer",
-    value: "۹ ثانیه",
-    label: "از نمونه تا عدد",
-  },
-  {
-    icon: "Medal",
-    value: "مادام‌العمر",
-    label: "گارانتی دستگاه",
-  },
+const metrics = [
+  { figure: "۹ ثانیه", label: "زمان نتیجه" },
+  { figure: "۰.۵", label: "میکرولیتر نمونه" },
+  { figure: "مادام‌العمر", label: "گارانتی دستگاه" },
+  { figure: "۲۰ سال", label: "حضور در ایران" },
 ];
 
 export function TrustBar() {
   return (
-    <section aria-label="شاخص‌های محصول" className="px-4 py-4 sm:px-6">
-      <div className="mx-auto max-w-6xl rounded-2xl bg-brand-fg px-4 py-3.5 sm:px-5">
-        <ul className="grid grid-cols-2 gap-x-4 gap-y-3 lg:grid-cols-4 lg:gap-3">
-          {metrics.map((item) => (
-            <li key={item.value} className="flex items-center gap-2.5">
-              <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white/10 text-brand-secondary">
-                <FeatureIcon name={item.icon} size={16} />
-              </span>
-              <span className="min-w-0 text-start">
-                <span className="block text-sm font-extrabold text-white">
-                  {item.value}
-                </span>
-                <span className="block text-[11px] leading-4 text-white/70">
-                  {item.label}
-                </span>
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <section aria-label="شاخص‌های محصول" className="bg-brand-bg px-4 pb-10 sm:px-6 sm:pb-14">
+      <ul className="mx-auto grid max-w-6xl grid-cols-2 overflow-hidden rounded-[1.5rem] border border-brand-border/70 bg-white lg:grid-cols-4">
+        {metrics.map((item, index) => (
+          <li
+            key={item.label}
+            className={`flex flex-col items-center justify-center gap-2 px-4 py-8 text-center sm:px-6 sm:py-10 ${
+              index % 2 === 1 ? "border-s border-brand-border/60" : ""
+            } ${index >= 2 ? "border-t border-brand-border/60 lg:border-t-0" : ""} ${
+              index > 0 ? "lg:border-s lg:border-brand-border/60" : ""
+            }`}
+          >
+            <span className="text-[1.55rem] font-extrabold leading-none tracking-tight text-brand-primary sm:text-[2rem]">
+              {item.figure}
+            </span>
+            <span className="text-sm leading-6 text-muted-foreground">{item.label}</span>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

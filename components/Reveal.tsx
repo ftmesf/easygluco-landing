@@ -32,17 +32,14 @@ export function Reveal({
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove("reveal-hidden");
-            observer.unobserve(entry.target);
-          }
-        });
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        items.forEach((el) => el.classList.remove("reveal-hidden"));
+        observer.disconnect();
       },
-      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" },
+      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
     );
 
-    items.forEach((el) => observer.observe(el));
+    observer.observe(container);
     return () => observer.disconnect();
   }, []);
 
