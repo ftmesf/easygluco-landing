@@ -15,6 +15,16 @@ export const metadata: Metadata = {
     "ایزی‌گلوکو پایش قند خون را با نوار همیشه در دسترس، دقت تأییدشده و اتصال به اپ سیناکر ساده و قابل‌ادامه می‌کند؛ تحت لیسانس Osung Healthcare با ۲۰ سال حضور در ایران.",
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "سیناکر",
+  legalName: "شرکت راهکار هوشمند سینا",
+  url: "https://sinacare.ir/",
+  telephone: "021-91002002",
+  email: "support@sinacare.ir",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,6 +33,10 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl" className={`${vazirmatn.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-background text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         {children}
         {process.env.NODE_ENV === "development" ? <AgentationToolbar /> : null}
       </body>

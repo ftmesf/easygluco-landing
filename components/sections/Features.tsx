@@ -10,10 +10,12 @@ export function Features() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-extrabold text-brand-fg sm:text-3xl">
-            امکانات دستگاه
+            ایزی‌گلوکو چه امکاناتی دارد؟
           </h2>
           <p className="mt-4 text-base leading-8 text-muted-foreground">
-            از نوار تا ثبت در اپ — آنچه برای تست روزانه لازم است.
+            دستگاه ایزی‌گلوکو در ۹ ثانیه نتیجه می‌دهد، عدد را با اسکن نمایشگر
+            در اپ سیناکر ثبت می‌کند و تا ۳۶۵ نتیجه آزمایش را روی خود نگه
+            می‌دارد.
           </p>
         </div>
 
