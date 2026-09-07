@@ -16,11 +16,11 @@ export function Specs() {
             مشخصات فنی
           </Badge>
           <h2 className="mt-3 text-2xl font-extrabold text-brand-fg sm:text-3xl">
-            زیرساخت اندازه‌گیری روزمره شما
+            مشخصات فنی دستگاه ایزی‌گلوکو چیست؟
           </h2>
           <p className="mt-4 max-w-md text-base leading-8 text-muted-foreground">
-            هر عدد زیر، پاسخی مستقیم به یکی از نیازهای پایش روزانه است؛ از حجم
-            نمونه و زمان نتیجه تا حافظه، باتری و گارانتی مادام‌العمر.
+            مشخصات فنی ایزی‌گلوکو شامل حجم نمونه، زمان نتیجه، حافظه، باتری و
+            گارانتی مادام‌العمر است.
           </p>
 
           <div className="mt-8 overflow-hidden rounded-3xl border border-brand-border/70 bg-white shadow-sm">
@@ -48,8 +48,8 @@ export function Specs() {
           <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-brand-secondary/20 to-brand-primary/10 blur-xl" />
           <div className="relative overflow-hidden rounded-[1.75rem] border border-brand-border/70 bg-white shadow-xl">
             <Image
-              src="/images/product-2.webp"
-              alt="بسته‌بندی دستگاه ایزی‌گلوکو"
+              src="/images/easygluco-box.jpg"
+              alt="بسته‌بندی نوار تست قند خون ایزی‌گلوکو"
               width={800}
               height={800}
               className="h-auto w-full object-cover"

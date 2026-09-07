@@ -23,7 +23,7 @@ export function WhatIsEasyGluco() {
         <Reveal className="mt-12 grid items-stretch gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
           <figure className="relative overflow-hidden rounded-[1.75rem] bg-brand-bg-alt">
             <Image
-              src="/images/kit-glucose.jpg"
+              src="/images/easygluco-meter.png"
               alt="دستگاه تست قند خون ایزی‌گلوکو"
               width={720}
               height={720}
